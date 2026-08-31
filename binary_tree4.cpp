@@ -1,4 +1,4 @@
-#include <bits/stdc++.h> // T.C O(nlogn)
+#include <bits/stdc++.h> // T.C O(n)
 using namespace std;
 
 class Node {
