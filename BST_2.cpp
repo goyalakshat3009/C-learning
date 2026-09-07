@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include <bits/stdc++.h> // T.c O(M+N)
 using namespace std;
 
 class Node {
