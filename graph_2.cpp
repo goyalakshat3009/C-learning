@@ -17,14 +17,25 @@ public:
         l[v].push_back(u);
     }
 
-    void printAdjList() {
-        for(int i=0; i<V; i++) {
-            cout << i << " ";
-            for(int neigh : l[i]) {
-                cout << neigh << " ";
+    // BFS Traversal
+    void bfs() {
+        queue<int> Q;
+        vector<bool> vis(V,false);
+
+        Q.push(0);
+        vis[0]=true;
+        while(Q.size() > 0) {
+            int u=Q.front();
+            Q.pop();
+            cout << u << " ";
+            for(int v:l[u])  { // v->immediate negihbour 
+                if(!vis[v]) {
+                    vis[v]=true;
+                    Q.push(v);
+                }
             }
-            cout << endl;
         }
+        cout << endl;
     }
 };
 
@@ -36,7 +47,7 @@ int main() {
     g.addEdge(2,3);
     g.addEdge(2,4);
 
-    g.printAdjList();
+    g.bfs();
     
     return 0;
 }
